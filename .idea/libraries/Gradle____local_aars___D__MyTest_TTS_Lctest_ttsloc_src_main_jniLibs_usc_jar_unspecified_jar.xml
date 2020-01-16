@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:D.\MyTest\TTS_Lctest\ttsloc\src\main\jniLibs\usc.jar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ttsloc/src/main/jniLibs/usc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
