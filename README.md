@@ -1,7 +1,15 @@
 # TTS_Lctest
  离线语音报读，语音叫号的开源框架，欢迎大家标星
 使用方式：<br/>
+
 1：下载TTS_Lctest的deno，将里面的ttsloc library 引入项目。<br/>
+<br/>
+<br/>
+你也可以直接下载aar 包在Android studio 中使用：
+<br/>
+
+[ttsloc-v1.0.0.aar](https://github.com/ccc920123/TTS_Lctest/blob/master/downloads/ttsloc-v1.0.0.aar?raw=true)
+<br/><br/>
 2：由于library包含so 需要在 app 的build.gradle中添加<br/>
 ndk的支持
 
