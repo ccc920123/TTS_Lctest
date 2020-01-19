@@ -1,7 +1,7 @@
 # TTS_Lctest 离线语音报读，语音叫号的开源框架
  <br/>欢迎大家标星
  <br/>
-##使用方式：<br/>
+# 使用方式：<br/>
 
 1：下载TTS_Lctest的deno，将里面的ttsloc library 引入项目。<br/>
 <br/>
