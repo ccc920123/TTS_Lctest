@@ -4,7 +4,6 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
 
-
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 29
@@ -19,9 +18,19 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+    lintOptions {
+        abortOnError false // 即使有报错也不会停止打包
+        checkReleaseBuilds false // 打包Release版本的时候也不进行Lint检测
+    }
+
+
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api files('libs/usc.jar')
 }
+if (hasProperty("BINTRAY_KEY")) {
+    apply from: 'bintray.gradle'
+}
+

@@ -16,11 +16,8 @@ import cn.yunzhisheng.tts.offline.basic.TTSFactory;
 import cn.yunzhisheng.tts.offline.common.USCError;
 
 /**
- * 描述：离线语音工具
- * 编写人：陈渝金-pc:chenyujin
- * 时间： 2020/1/15 16:29
- * 修改人：
- * 修改时间：
+ * TTS NOT NET.
+ * zuozhe: chenyujin
  */
 public class TTSUtils {
 
@@ -48,14 +45,13 @@ public class TTSUtils {
         return instance;
     }
 
-    /**
-     * 初始化本地离线TTS
-     */
+
     public void initTts(Context context) {
         this.mContext=context;
-        // 初始化语音合成对象
+        //
+        //Initialize speech synthesis object
         mTTSPlayer = TTSFactory.createTTSControl(mContext, appKey);
-        // 设置本地合成
+        // Set local synthesis
 //        mTTSPlayer.setOption(SpeechConstants.TTS_SERVICE_MODE, SpeechConstants.TTS_SERVICE_MODE_LOCAL);
 //        File _FrontendModelFile = new File(FRONTEND_MODEL);
 //        if (!_FrontendModelFile.exists()) {
@@ -65,11 +61,12 @@ public class TTSUtils {
 //        if (!_BackendModelFile.exists()) {
 //            copyAssetFile(BACKEND_MODEL, "OfflineTTSModels/backend_lzl");
 //        }
-//        // 设置前端模型
+//        // Set up front end model
 //        mTTSPlayer.setOption(SpeechConstants.TTS_KEY_FRONTEND_MODEL_PATH, FRONTEND_MODEL);
-//        // 设置后端模型
+//        // Set up backend model
 //        mTTSPlayer.setOption(SpeechConstants.TTS_KEY_BACKEND_MODEL_PATH, BACKEND_MODEL);
-        // 设置回调监听
+        //
+        //Set callback listening
         mTTSPlayer.setTTSListener(new TTSPlayerListener() {
 
             @Override
@@ -89,7 +86,7 @@ public class TTSUtils {
 
             @Override
             public void onError(USCError uscError) {
-                // 语音合成错误回调
+
                 Log.i("demo", "onError");
             }
 
@@ -108,7 +105,7 @@ public class TTSUtils {
         mTTSPlayer.setStreamType(AudioManager.STREAM_RING);
         mTTSPlayer.setVoicePitch(1.1f);
         mTTSPlayer.setPlayStartBufferTime(3000);
-        // 初始化合成引擎
+        // Initialize the synthesis engine
         mTTSPlayer.init();
     }
 
@@ -140,7 +137,7 @@ public class TTSUtils {
 
     public void release() {
         if (null != mTTSPlayer) {
-            // 释放离线引擎       
+            // Release offline engine
             mTTSPlayer.release();
         }
     }
@@ -151,10 +148,10 @@ public class TTSUtils {
             FileOutputStream fos = new FileOutputStream(new File(path));
             byte[] buffer = new byte[1024];
             int byteCount = 0;
-            while ((byteCount = is.read(buffer)) != -1) {// 循环从输入流读取buffer字节        
-                fos.write(buffer, 0, byteCount);// 将读取的输入流写入到输出流       
+            while ((byteCount = is.read(buffer)) != -1) {// Loop reads buffer bytes from input stream
+                fos.write(buffer, 0, byteCount);// Write the read input stream to the output stream
             }
-            fos.flush();// 刷新缓冲区       
+            fos.flush();
             is.close();
             fos.close();
         } catch (IOException e) {
