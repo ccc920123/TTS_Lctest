@@ -28,7 +28,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api files('libs/usc.jar')
+    api files('libs/ttsc.jar')
 }
 if (hasProperty("BINTRAY_KEY")) {
     apply from: 'bintray.gradle'
